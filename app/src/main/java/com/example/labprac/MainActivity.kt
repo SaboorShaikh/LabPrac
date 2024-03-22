@@ -42,47 +42,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-class DatastoreManager(context: Context) {
-    private val thisContext = context
-    private val Context.dataStore by preferencesDataStore(name = "prefs")
-    private val ageKey = intPreferencesKey(name = "age")
-
-    suspend fun saveAge(age: Int) {
-        thisContext.dataStore.edit {
-            it[ageKey] = age
-        }
-    }
-
-    suspend fun getAge(): Int {
-        val ageFlow = thisContext.dataStore.data.map {
-            it[ageKey] ?: 0
-        }
-        return ageFlow.first()
-    }
-}
-
-@Composable
-fun myApp(modifier: Modifier = Modifier, context: Context = LocalContext.current) {
-    val dataMgr = DatastoreManager(context)
-    val scope = rememberCoroutineScope()
-    val age = remember {
-        mutableStateOf(0)
-    }
-    LaunchedEffect(Unit) {
-        age.value = dataMgr.getAge()
-    }
-    Column {
-        Button(onClick = {
-            scope.launch {
-                dataMgr.saveAge(28)
-            }
-        }) {
-            Text(text = "Save User")
-        }
-        Text(age.value.toString())
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
