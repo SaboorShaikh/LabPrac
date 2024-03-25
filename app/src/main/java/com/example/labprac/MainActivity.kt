@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    myApp()
+
                 }
             }
         }
@@ -36,9 +36,10 @@ fun GreetingPreview() {
 //    LoginScreen()
 //    Greeting()
 //    myApp()
-    SuperScriptText(
+/*    SuperScriptText(
         normalText = "Hello",
         superText = "World!",
         superTextFontWeight = FontWeight.Light
-    )
+    )*/
+
 }
