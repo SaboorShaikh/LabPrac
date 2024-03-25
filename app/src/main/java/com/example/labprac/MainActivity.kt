@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.labprac.ui.theme.LabPracTheme
 
@@ -34,5 +35,10 @@ fun GreetingPreview() {
 //    MainScreen()
 //    LoginScreen()
 //    Greeting()
-    myApp()
+//    myApp()
+    SuperScriptText(
+        normalText = "Hello",
+        superText = "World!",
+        superTextFontWeight = FontWeight.Light
+    )
 }
