@@ -50,7 +50,9 @@ android {
 }
 
 dependencies {
-
+    implementation("com.google.android.gms:play-services-maps:18.0.0")
+    implementation("androidx.compose.ui:ui:x.y.z")
+    implementation("androidx.compose.material:material:x.y.z")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
