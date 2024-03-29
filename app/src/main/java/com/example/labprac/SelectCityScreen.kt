@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -18,15 +19,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Scaffold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SelectCitScreen() {
+fun SelectCitScreen(
+    navController: NavController
+) {
     var cityName by remember {
         mutableStateOf("")
     }
@@ -51,6 +57,8 @@ fun SelectCitScreen() {
         OutlinedTextField(
             value = cityName,
             onValueChange = { cityName = it },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
             label = {
                 Text(
                     text = "Select City",
@@ -59,9 +67,14 @@ fun SelectCitScreen() {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 30.dp, horizontal = 20.dp)
+                .padding(
+                    vertical = 30.dp,
+                    horizontal = 20.dp
+                )
         )
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            navController.navigate(route = Screen.WeatherDetail.route)
+        }) {
             Text(text = "Show Weather")
         }
     }
@@ -70,5 +83,5 @@ fun SelectCitScreen() {
 @Preview(showBackground = true)
 @Composable
 fun SelectCitScreenPreview() {
-    SelectCitScreen()
+    SelectCitScreen(navController = rememberNavController())
 }

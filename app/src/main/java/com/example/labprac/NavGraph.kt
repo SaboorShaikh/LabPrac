@@ -11,12 +11,12 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Home.route
+        startDestination = Screen.SelectCity.route
     ) {
         composable(
-            route = Screen.Home.route
+            route = Screen.SelectCity.route
         ) {
-            HomeScreen(navController)
+            SelectCitScreen(navController)
         }
         composable(
             route = Screen.Detail.route
