@@ -5,5 +5,7 @@ sealed class Screen(val route: String) {
     object Detail : Screen(route = "detail_screen")
     object SelectCity : Screen(route = "select_city_screen")
     object WeatherDetail : Screen(route = "weather_detail_screen")
+    object SplashScreen : Screen(route = "splash_screen")
+    object splash : Screen(route = "splash")
 
 }
