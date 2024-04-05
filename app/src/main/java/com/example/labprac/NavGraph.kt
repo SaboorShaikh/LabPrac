@@ -11,17 +11,28 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.splash.route
+        startDestination = Screen.GoogleButton.route
     ) {
         composable(
             route = Screen.splash.route
-        ){
+        ) {
             splash(navController)
+        }
+        composable(
+            route = Screen.GoogleButton.route
+        ) {
+            GoogleButton(
+                navController,
+                onClicked = {}
+            )
         }
         composable(
             route = Screen.SelectCity.route
         ) {
-            SelectCitScreen(navController)
+            GoogleButton(
+                navController,
+                onClicked = {}
+            )
         }
         composable(
             route = Screen.Detail.route
