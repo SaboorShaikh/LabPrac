@@ -11,7 +11,7 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.GoogleButton.route
+        startDestination = Screen.CoilImage.route
     ) {
         composable(
             route = Screen.splash.route
@@ -38,6 +38,11 @@ fun SetupNavGraph(
             route = Screen.Detail.route
         ) {
             DetailScreen(navController)
+        }
+        composable(
+            route = Screen.CoilImage.route
+        ) {
+            CoilImage(navController)
         }
     }
 }

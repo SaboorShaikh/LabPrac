@@ -8,4 +8,5 @@ sealed class Screen(val route: String) {
     object SplashScreen : Screen(route = "splash_screen")
     object splash : Screen(route = "splash")
     object GoogleButton : Screen(route = "google_button")
+    object CoilImage: Screen(route = "coil_image")
 }
