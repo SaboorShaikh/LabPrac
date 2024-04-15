@@ -11,7 +11,7 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.CoilImage.route
+        startDestination = Screen.Login.route
     ) {
         composable(
             route = Screen.splash.route
@@ -43,6 +43,11 @@ fun SetupNavGraph(
             route = Screen.CoilImage.route
         ) {
             CoilImage(navController)
+        }
+        composable(
+            route = Screen.Login.route
+        ){
+            LoginScreen(navController)
         }
     }
 }
