@@ -10,4 +10,6 @@ sealed class Screen(val route: String) {
     object GoogleButton : Screen(route = "google_button")
     object CoilImage : Screen(route = "coil_image")
     object Login : Screen(route = "login_screen")
+    object Gradient : Screen(route = "gradient_button")
+    object Notification : Screen(route = "notification_screen")
 }
